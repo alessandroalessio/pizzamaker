@@ -26,7 +26,7 @@ export default function Home() {
 	};
 
 	return (
-		<main className="max-w-md mx-auto my-12">
+		<main className="max-w-md mx-4 md:mx-auto my-12">
 			<div className="flex gap-4 justify-center items-center">
 				<Image
 					src="/icon.svg"
