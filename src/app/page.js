@@ -1,113 +1,186 @@
-import Image from "next/image";
+'use client';
+import { useState } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Home() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+	const [persone, setPersone] = useState(1);
+	const [farina, setFarina] = useState(165);
+	const [acqua, setAcqua] = useState(250);
+	const [sale, setSale] = useState(4.5);
+	const [lievito, setLievito] = useState(2.3);
+	const [ricetta, setRicetta] = useState('hidden');
+	const [ricettaArrow, setRicettaArrow] = useState('rotate-180');
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+	const handleChange = (e) => {
+		let sP = e.target.value;
+		setFarina(165 * sP);
+		setAcqua(250 * sP);
+		setSale(4.5 * sP);
+		setLievito(2.3 * sP);
+	};
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+	const handleRicetta = () => {
+		setRicetta(ricetta == 'hidden' ? 'block' : 'hidden');
+		setRicettaArrow(ricettaArrow == 'rotate-180' ? 'rotate-0' : 'rotate-180');
+	};
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+	return (
+		<main className="max-w-md mx-auto my-12">
+			<div className="flex gap-4 justify-center items-center">
+				<Image
+					src="/icon.svg"
+					alt="logo"
+					width="0"
+					height="0"
+					sizes="100vw"
+					title="Dosi per Pizza in Casa - Pizza Maker"
+					className="w-36 h-36"
+				/>
+				<div>
+					<h1 className="uppercase text-sm opacity-60">
+						Dosi per pizza in casa
+					</h1>
+					<h2 className="text-6xl font-extrabold leading-[3.5rem]">
+						PIZZA MAKER
+					</h2>
+				</div>
+			</div>
+			<div className="my-8">
+				<p>
+					Non sono un pizzaiolo ma amo la pizza alla follia. Dal 2020 mi
+					diletto in casa con un canonico forno da cucina e ho deciso di
+					creare questo piccolo tool per aiutarmi nel peso degli
+					ingredienti.
+				</p>
+			</div>
+			<div className="my-4">
+				<label for="persone">Per quante persone?</label>
+				<select name="persone" onChange={handleChange}>
+					<option value="1" selected>
+						1
+					</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+				</select>
+			</div>
+			<div className="my-4 grid grid-cols-2 gap-2">
+				{/* Acqua */}
+				<div className="relative">
+					<label for="acqua">Acqua</label>
+					<input type="text" name="acqua" id="acqua" value={acqua} />
+					<span className="absolute top-1/2 right-4 z-10 opacity-50">
+						ml.
+					</span>
+				</div>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
+				{/* Farina */}
+				<div className="relative">
+					<label for="farina">Farina</label>
+					<input type="text" name="farina" id="farina" value={farina} />
+					<span className="absolute top-1/2 right-4 z-10 opacity-50">
+						gr.
+					</span>
+				</div>
+			</div>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  );
+			<div className="my-4 grid grid-cols-2 gap-2">
+				{/* Sale */}
+				<div className="relative">
+					<label for="sale">Sale</label>
+					<input type="text" name="sale" id="sale" value={sale} />
+					<span className="absolute top-1/2 right-4 z-10 opacity-50">
+						gr.
+					</span>
+				</div>
+
+				{/* Acqua */}
+				<div className="relative">
+					<label for="lievito">Lievito Secco</label>
+					<input type="text" name="lievito" id="lievito" value={lievito} />
+					<span className="absolute top-1/2 right-4 z-10 opacity-50">
+						gr.
+					</span>
+				</div>
+			</div>
+			<span className="h-[1px] bg-gray-300 block w-full my-8"></span>
+			<div>
+				<div className="text-xl mb-2 flex items-center justify-between uppercase">
+					<h2>Come realizzo la mia Pizza?</h2>
+					<span
+						class={
+							'opacity-50 transition-all duration-150 ease-in-out ' +
+							ricettaArrow
+						}
+						onClick={handleRicetta}
+					>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							width={24}
+							height={24}
+							viewBox="0 0 24 24"
+						>
+							<path
+								fill="none"
+								stroke="currentColor"
+								strokeLinecap="round"
+								strokeLinejoin="round"
+								strokeWidth={2}
+								d="m5 15l7-7l7 7"
+							></path>
+						</svg>
+					</span>
+				</div>
+				<div className={'entry-content ' + ricetta}>
+					<p>
+						Utilizzo le mie <strong>dosi per pizza in casa</strong>{' '}
+						partendo dall&apos;acqua. La verso in una ciotola capiente e
+						aggiungo il lievito secco e faccio sciogliere il lievito. Una
+						vota sciolto lo lievito aggiungo poco alla volta la farina
+						girandola un cucchiaio o una forchetta affinchè non si creino
+						grumi. Quando la farina unita all&apos;acqua assomiglia ad una
+						pastella verso tutto il sale e continuo a mescolare ed
+						aggiungere farina. Una volta unita tutta la farina, che
+						dovrebbe essersi completamente assorbita, dovresti avere una
+						pallina che ungo con un filo di olio. Copro il contenitore
+						affinchè non passi l&apos;aria e lascio lievitare per almeno
+						un paio d&apos;ore.
+					</p>
+					<p>
+						Passate due ore riprendo l&apos;impasto che dovrebbe essere
+						più manleabile. Lo stendo sul piano di lavoro cercando di
+						tirarlo da tutte le estremità, cercando di creare un velo il
+						più sottile possibile. Questa operazione mi serve rafforzare
+						l&apos;impasto. Una volta stesto completamente, prendo le
+						estremità e cerco di appallattolarle cercando di sigillare
+						bene la pallina realizzata.
+					</p>
+					<p>
+						A questo punto mi assicuro che il contenitore possa permettere
+						la lievitazione dell&apos;impasto, che raddoppierà
+						nell&apos;arco di qualche ora. Un paio d&apos;ore prima di
+						stendere la pizza creo le porzioni per persona che saranno di
+						250/270 grammi ognuna.
+					</p>
+				</div>
+			</div>
+			<span className="h-[1px] bg-gray-300 block w-full my-8"></span>
+
+			<div className="mt-12 text-sm text-center">
+				<span className="opacity-50">Made with</span> ❤️{' '}
+				<span className="opacity-50">and</span> 🍺{' '}
+				<span className="opacity-50">by </span>
+				<Link href="https://www.a2area.it" className="opacity-85">
+					Alessandro Alessio
+				</Link>
+			</div>
+		</main>
+	);
 }
