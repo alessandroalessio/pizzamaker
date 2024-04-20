@@ -48,10 +48,10 @@ export default function Home() {
 			</div>
 			<div className="my-8">
 				<p>
-					I'm not a pizza maker but I love pizza. Since 2020 I've been
-					start making pizza at home with a regular kitchen oven and I've
-					decided to create this small tool to help me with the weights of
-					the ingredients.
+					I&apos;m not a pizza maker but I love pizza. Since 2020 I&apos;ve
+					been start making pizza at home with a regular kitchen oven and
+					I&apos;ve decided to create this small tool to help me with the
+					weights of the ingredients.
 				</p>
 			</div>
 			<div className="my-4">
