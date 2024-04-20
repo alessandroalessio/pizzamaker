@@ -34,12 +34,12 @@ export default function Home() {
 					width="0"
 					height="0"
 					sizes="100vw"
-					title="Dosi per Pizza in Casa - Pizza Maker"
+					title="Right weights for your pizza - Pizza Maker"
 					className="w-36 h-36"
 				/>
 				<div>
 					<h1 className="uppercase text-sm opacity-60">
-						Dosi per pizza in casa
+						Ingredients weights for pizza
 					</h1>
 					<h2 className="text-6xl font-extrabold leading-[3.5rem]">
 						PIZZA MAKER
@@ -48,14 +48,14 @@ export default function Home() {
 			</div>
 			<div className="my-8">
 				<p>
-					Non sono un pizzaiolo ma amo la pizza alla follia. Dal 2020 mi
-					diletto in casa con un canonico forno da cucina e ho deciso di
-					creare questo piccolo tool per aiutarmi nel peso degli
-					ingredienti.
+					I'm not a pizza maker but I love pizza. Since 2020 I've been
+					start making pizza at home with a regular kitchen oven and I've
+					decided to create this small tool to help me with the weights of
+					the ingredients.
 				</p>
 			</div>
 			<div className="my-4">
-				<label htmlFor="persone">Per quante persone?</label>
+				<label htmlFor="persone">For how many person?</label>
 				<select name="persone" onChange={handleChange} defaultValue={1}>
 					<option value="1">1</option>
 					<option value="2">2</option>
@@ -72,7 +72,7 @@ export default function Home() {
 			<div className="my-4 grid grid-cols-2 gap-2">
 				{/* Acqua */}
 				<div className="relative">
-					<label htmlFor="acqua">Acqua</label>
+					<label htmlFor="acqua">Water</label>
 					<input
 						type="text"
 						name="acqua"
@@ -86,7 +86,7 @@ export default function Home() {
 
 				{/* Farina */}
 				<div className="relative">
-					<label htmlFor="farina">Farina</label>
+					<label htmlFor="farina">Flour</label>
 					<input
 						type="text"
 						name="farina"
@@ -102,7 +102,7 @@ export default function Home() {
 			<div className="my-4 grid grid-cols-2 gap-2">
 				{/* Sale */}
 				<div className="relative">
-					<label htmlFor="sale">Sale</label>
+					<label htmlFor="sale">Salt</label>
 					<input type="text" name="sale" id="sale" defaultValue={sale} />
 					<span className="absolute top-1/2 right-4 z-10 opacity-50">
 						gr.
@@ -111,7 +111,7 @@ export default function Home() {
 
 				{/* Acqua */}
 				<div className="relative">
-					<label htmlFor="lievito">Lievito Secco</label>
+					<label htmlFor="lievito">Dry Yeast</label>
 					<input
 						type="text"
 						name="lievito"
@@ -123,10 +123,10 @@ export default function Home() {
 					</span>
 				</div>
 			</div>
-			<span className="h-[1px] bg-gray-300 block w-full my-8"></span>
+			{/* <span className="h-[1px] bg-gray-300 block w-full my-8"></span>
 			<div>
 				<div className="text-xl mb-2 flex items-center justify-between uppercase">
-					<h2>Come realizzo la mia Pizza?</h2>
+					<h2>How do i make my Pizza?</h2>
 					<span
 						className={
 							'opacity-50 transition-all duration-150 ease-in-out ' +
@@ -183,7 +183,7 @@ export default function Home() {
 						250/270 grammi ognuna.
 					</p>
 				</div>
-			</div>
+			</div> */}
 			<span className="h-[1px] bg-gray-300 block w-full my-8"></span>
 
 			<div className="mt-12 text-sm text-center">
