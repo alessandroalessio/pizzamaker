@@ -1,0 +1,21 @@
+{
+	"short_name": "Pizza Maker",
+	"name": "Pizza Maker | Dosi per Pizza",
+	"icons": [
+		{
+			"src": "/logo.svg",
+			"sizes": "192x192",
+			"type": "application/svg+xml"
+		},
+		{
+			"src": "/logo.svg",
+			"sizes": "512x512",
+			"type": "application/svg+xml"
+		}
+	],
+	"start_url": "/",
+	"background_color": "#8AFFBD",
+	"display": "standalone",
+	"scope": "/",
+	"theme_color": "#8AFFBD"
+}
