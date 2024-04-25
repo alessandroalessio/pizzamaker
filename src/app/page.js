@@ -5,8 +5,8 @@ import Link from 'next/link';
 
 export default function Home() {
 	const [persone, setPersone] = useState(1);
-	const [farina, setFarina] = useState(165);
-	const [acqua, setAcqua] = useState(250);
+	const [farina, setFarina] = useState(250);
+	const [acqua, setAcqua] = useState(165);
 	const [sale, setSale] = useState(4.5);
 	const [lievito, setLievito] = useState(2.3);
 	const [ricetta, setRicetta] = useState('hidden');
@@ -14,8 +14,8 @@ export default function Home() {
 
 	const handleChange = (e) => {
 		let sP = e.target.value;
-		setFarina(165 * sP);
-		setAcqua(250 * sP);
+		setFarina(250 * sP);
+		setAcqua(165 * sP);
 		setSale(parseFloat(4.5 * sP).toFixed(2));
 		setLievito(parseFloat(2.3 * sP).toFixed(2));
 	};
