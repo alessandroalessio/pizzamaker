@@ -7,7 +7,7 @@ export default function Home() {
 	const [persone, setPersone] = useState(1);
 	const [farina, setFarina] = useState(250);
 	const [acqua, setAcqua] = useState(165);
-	const [sale, setSale] = useState(4.5);
+	const [sale, setSale] = useState(6.5);
 	const [lievito, setLievito] = useState(2.3);
 	const [ricetta, setRicetta] = useState('hidden');
 	const [ricettaArrow, setRicettaArrow] = useState('rotate-180');
@@ -16,7 +16,7 @@ export default function Home() {
 		let sP = e.target.value;
 		setFarina(250 * sP);
 		setAcqua(165 * sP);
-		setSale(parseFloat(4.5 * sP).toFixed(2));
+		setSale(parseFloat(6.5 * sP).toFixed(2));
 		setLievito(parseFloat(2.3 * sP).toFixed(2));
 	};
 
